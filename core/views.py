@@ -8,9 +8,12 @@ from django.shortcuts import render, redirect
 def home(request):
     return render(request, 'home.html')
 
+from .models import WarrantyItem  # Import your model
 @login_required
 def dashboard(request):
-    return render(request, 'dashboard.html')
+    items = WarrantyItem.objects.filter(user=request.user)
+    return render(request, 'dashboard.html', {'items': items})
+
 
 from django.contrib.auth.forms import UserCreationForm
 
@@ -35,5 +38,25 @@ def register(request):
     else:
         form = UserCreationForm()
     return render(request, 'register.html', {'form': form})
+
+
+
+from .forms import WarrantyItemForm
+from django.contrib.auth.decorators import login_required
+
+@login_required
+@login_required
+def upload_warranty(request):
+    if request.method == 'POST':
+        form = WarrantyItemForm(request.POST, request.FILES)
+        if form.is_valid():
+            warranty = form.save(commit=False)
+            warranty.user = request.user
+            warranty.save()
+            messages.success(request, "Warranty item uploaded successfully.")
+            return redirect('dashboard')
+    else:
+        form = WarrantyItemForm()
+    return render(request, 'upload_warranty_item.html', {'form': form})
 
 

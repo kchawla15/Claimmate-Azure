@@ -16,10 +16,20 @@
     <div class="container">
         <a class="navbar-brand fw-bold" href="/">ClaimMate NZ</a>
         <div class="collapse navbar-collapse">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Privacy</a></li>
-            </ul>
+<ul class="navbar-nav me-auto">
+    {% if user.is_authenticated %}
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'dashboard' %}">Home</a>
+        </li>
+    {% else %}
+        <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+        </li>
+    {% endif %}
+    <li class="nav-item">
+        <a class="nav-link" href="#">Privacy</a>
+    </li>
+</ul>
             <ul class="navbar-nav ms-auto">
                 {% if user.is_authenticated %}
                     <li class="nav-item align-items-center d-flex">
