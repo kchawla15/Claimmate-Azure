@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'postgres',
         'USER': 'pgadmin@claimmate-pgsql-xxxx',
-        'PASSWORD': 'admin@123',
+        'PASSWORD': 'admin123#',
         'HOST': 'claimmate-pgsql-xxxx.postgres.database.azure.com',
         'PORT': '5432',
         'OPTIONS': {
