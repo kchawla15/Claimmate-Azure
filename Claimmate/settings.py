@@ -78,10 +78,18 @@ LOGIN_REDIRECT_URL = '/dashboard/'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
+        'USER': 'pgadmin@claimmate-pgsql-xxxx',
+        'PASSWORD': 'YOUR_ADMIN_PASSWORD',
+        'HOST': 'claimmate-pgsql-xxxx.postgres.database.azure.com',
+        'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require',
+        }
     }
 }
+
 
 
 # Password validation
