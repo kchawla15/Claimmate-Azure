@@ -82,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': os.environ.get('DATABASE_NAME', 'claimmate'),
         'USER': os.environ.get('DATABASE_USER', 'claimmateadmin'),
-        'PASSWORD': os.environ.get('DATABASE_PASSWORD', ''),
+        'PASSWORD': os.environ.get('admin123.', ''),
         'HOST': os.environ.get('DATABASE_HOST', 'localhost'),
         'PORT': os.environ.get('DATABASE_PORT', '3306'),
         }
