@@ -29,7 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [ 'claimmate-app-yourinitials-fuatgcg7hye3c9bt.australiaeast-01.azurewebsites.net',
     'localhost',
-    '127.0.0.1']
+    '127.0.0.1', '*']
 
 CSRF_TRUSTED_ORIGINS = [
  'https://claimmate-app-yourinitials-fuatgcg7hye3c9bt.australiaeast-01.azurewebsites.net'
