@@ -16,9 +16,7 @@ def is_admin(user):
 
 @login_required
 def dashboard(request):
-    # Redirect admin to admin dashboard
-    if is_admin(request.user):
-        return redirect('admin_dashboard')
+    # NO REDIRECT! Admin can use dashboard like a normal user.
     items = WarrantyItem.objects.filter(user=request.user)
     return render(request, 'dashboard.html', {'items': items})
 
