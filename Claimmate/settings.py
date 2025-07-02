@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 import os
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -85,9 +86,10 @@ DATABASES = {
         'PASSWORD': os.environ.get('DATABASE_PASSWORD', 'admin123.'),
         'HOST': os.environ.get('DATABASE_HOST', 'claimmate-mysql-yourinitials.mysql.database.azure.com'),
         'PORT': os.environ.get('DATABASE_PORT', '3306'),
+        'OPTIONS': { 'ssl': {'ca': '/etc/ssl/certs/ca-certificates.crt'},
         }
     }
-
+}
 
 
 # Password validation
