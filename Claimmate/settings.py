@@ -34,6 +34,7 @@ CSRF_TRUSTED_ORIGINS = [
  'https://claimmate-app-yourinitials-fuatgcg7hye3c9bt.australiaeast-01.azurewebsites.net'
 ]
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 
