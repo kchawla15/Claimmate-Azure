@@ -81,7 +81,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': os.environ.get('DATABASE_NAME', 'claimmate'),
-        'USER': os.environ.get('DATABASE_USER', 'claimmateadmin@claimmate-mysql-yourinitials'),
+        'USER': os.environ.get('DATABASE_USER', 'claimmateadmin'),
         'PASSWORD': os.environ.get('DATABASE_PASSWORD', 'admin123.'),
         'HOST': os.environ.get('DATABASE_HOST', 'claimmate-mysql-yourinitials.mysql.database.azure.com'),
         'PORT': os.environ.get('DATABASE_PORT', '3306'),
