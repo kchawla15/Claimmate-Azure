@@ -1,25 +1,7 @@
-"""
-URL configuration for Claimmate project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-
 from django.contrib import admin
 from django.urls import path
 from core import views as core_views
 from django.contrib.auth import views as auth_views
-#from django.contrib.auth.views import LogoutView
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -30,8 +12,13 @@ urlpatterns = [
     path('dashboard/', core_views.dashboard, name='dashboard'),
     path('register/', core_views.register, name='register'),
     path('logout/', core_views.force_logout, name='logout'),
-path('upload/', core_views.upload_warranty, name='upload_warranty'),
+    path('upload/', core_views.upload_warranty, name='upload_warranty'),
+    path('delete-warranty/<int:item_id>/', core_views.delete_warranty, name='delete_warranty'),
 
+    # Admin panel URLs
+    path('admin-panel/', core_views.admin_dashboard, name='admin_dashboard'),
+    path('admin-panel/items/', core_views.admin_items, name='admin_items'),
+    path('admin-panel/delete/<int:pk>/', core_views.admin_delete_item, name='admin_delete_item'),
 ]
 
 if settings.DEBUG:
