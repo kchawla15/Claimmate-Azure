@@ -22,3 +22,8 @@ venv/
 
 # Ignore egg-info
 *.egg-info/
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

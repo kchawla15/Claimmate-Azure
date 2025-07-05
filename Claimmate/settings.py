@@ -90,14 +90,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': os.environ.get('DATABASE_NAME', 'claimmate'),
-        'USER': os.environ.get('DATABASE_USER', 'claimmateadmin'),
+        'USER': os.environ.get('DATABASE_USER', 'admin'),
         'PASSWORD': os.environ.get('DATABASE_PASSWORD', 'admin123.'),
-        'HOST': os.environ.get('DATABASE_HOST', 'claimmate-mysql-yourinitials.mysql.database.azure.com'),
+        'HOST': os.environ.get('DATABASE_HOST', 'claimmate-db.cn6aeu0eivpn.ap-southeast-2.rds.amazonaws.com'),
         'PORT': os.environ.get('DATABASE_PORT', '3306'),
-        'OPTIONS': { 'ssl': {'ca': '/etc/ssl/certs/ca-certificates.crt'},
-        }
+        'OPTIONS': {'ssl': {'ca': '/etc/ssl/certs/ca-certificates.crt'}}
     }
 }
+
 
 
 # Password validation
