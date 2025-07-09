@@ -80,8 +80,7 @@ DATABASES = {
         'HOST': os.environ.get('DATABASE_HOST', 'claimmate-db.cn6aeu0eivpn.ap-southeast-2.rds.amazonaws.com'),
         'PORT': os.environ.get('DATABASE_PORT', '3306'),
         # Use SSL CA if you need it (for Amazon RDS, this is typically correct)
-        'OPTIONS': {
-            'ssl': {'ca': '/etc/ssl/certs/ca-certificates.crt'}
+        'OPTIONS': { 'ssl': {'cert_reqs': None}
         }
     }
 }
